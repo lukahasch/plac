@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 
+use crate::StackFrame;
+
 use crate::{Type, Variable, Ref, Children};
 use asm::{Flag, Instruction};
 
@@ -18,10 +20,6 @@ pub struct Assembler {
 pub struct Block {
     instructions: Vec<Ir>,
     stackframe: Ref<StackFrame>,
-}
-
-pub struct StackFrame {
-    variables: HashMap<Variable, (Type, u64)>,
 }
 
 pub enum Ir {
